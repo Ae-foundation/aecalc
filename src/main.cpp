@@ -9,12 +9,13 @@ int main(int arg, char** av)
 	char in[100];
 	fgets(in, 100, stdin);
 	in[strlen(in) - 1] = '\0';
-	char* ctx = nullptr;
+	char*ctx = nullptr;
+	char*endptr = nullptr;
 	const char* a = strtok_s(in, " ", &ctx);
 	const char* b = strtok_s(nullptr, " ", &ctx);
 	const char* c = strtok_s(nullptr, " ", &ctx);
-	const double var = std::atof(a);
-	const double var0 = std::atof(c);
+	const double var = std::strtod(a, &endptr);
+	const double var0 = std::strtod(c, &endptr);
 	std::cout << a << " " << b << " " << c << " = ";
  	switch (*b) {
 		case 43:
