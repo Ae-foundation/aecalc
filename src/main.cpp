@@ -29,11 +29,10 @@ main(int arg, char**av)
 	char in[100];
 	fgets(in, 100, stdin);
 	in[strlen(in) - 1] = '\0';
-	char*ctx = nullptr;
 	char*endptr = nullptr;
-	const char*a = strtok_s(in, " ", &ctx);
-	const char*b = strtok_s(nullptr, " ", &ctx);
-	const char*c = strtok_s(nullptr, " ", &ctx);
+	const char*a = strtok(in, " ");
+	const char*b = strtok(nullptr, " ");
+	const char*c = strtok(nullptr, " ");
 	const double var = strtod(a, &endptr);
 	const double var0 = strtod(c, &endptr);
 	cout << a << " " << b << " " << c << " = ";
